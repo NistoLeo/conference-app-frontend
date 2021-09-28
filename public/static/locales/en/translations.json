@@ -14,8 +14,18 @@
   "Forbidden": "Not allowed to see this page!",
   "NavBar": {
     "MyFirstMenu": "My First Menu",
-    "Dashboard": "Dashboard",
-    "Settings": "Settings"
+    "Welcome": "Welcome",
+    "Settings": "Settings",
+    "Conference": "Conference",
+    "MyConferences": "My Conferences"
+  },
+  "LandingPage": {
+    "Title": "Welcome!",
+    "Subtitle": "Please enter your email:",
+    "BadEmail": "This is not a valid email!"
+  },
+  "UserMenu": {
+    "User": "Guest"
   },
   "Tooltips": {
     "Logout": "Logout",
@@ -30,6 +40,49 @@
     "InvalidDateMessage": "Invalid Date Format",
     "MinDateMessage": "Date should not be before minimal date",
     "MaxDateMessage": "Date should not be after maximal date"
+  },
+  "Buttons": {
+    "ResetFilters": "Reset Filters",
+    "ApplyFilters": "Apply Filters",
+    "Save": "Save"
+  },
+  "Conferences": {
+    "Filters": {
+      "StartDate": "Start date",
+      "EndDate": "End date"
+    },
+    "Speakers": "Speaker:",
+    "Attend": "Attend",
+    "Join": "Join",
+    "Withdraw": "Withdraw",
+    "StatusNotSet": "Status not set",
+    "Info": "Conference Info",
+    "Location": "Location",
+    "Name": "Conference name",
+    "StartDate": "Start date",
+    "EndDate": "End date",
+    "Type": "Conference type",
+    "Category": "Category"
+  },
+  "Speaker": {
+    "Name": "Name",
+    "Nationality": "Nationality",
+    "Rating": "Rating",
+    "MainSpeaker": "Main Speaker"
+  },
+  "Location": {
+    "Name": "Name",
+    "Address": "Address",
+    "Country": "Country",
+    "County": "County",
+    "City": "City",
+    "Latitude": "Latitude",
+    "Longitude": "Longitude"
+  },
+  "MyConferences": {
+    "Edit": "Edit",
+    "Delete": "Delete",
+    "AddButton": "Add Conference"
   },
   "Validations": {
     "Cnp": "The value is not a valid identifier number",

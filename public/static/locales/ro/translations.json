@@ -6,14 +6,67 @@
   "Forbidden": "Nu aveti dreptul sa vedeti aceasta pagina!",
   "NavBar": {
     "MyFirstMenu": "Primul meu meniu",
-    "Dashboard": "Panou central",
+    "Welcome": "Bun venit",
     "Settings": "Setari",
+    "Conference": "Conferinta",
+    "MyConferences": "Conferintele mele"
+  },
+  "Conferences": {
+    "Filters": {
+      "StartDate": "Data start",
+      "EndDate": "Data sfarsit"
+    },
+
+    "Speakers": "Prezentator:",
+    "Attend": "Participa",
+    "Join": "Intra",
+    "Withdraw": "Anuleaza",
+    "StatusNotSet": "Statusul nu este mentionat",
+    "Info": "Detalii Conferinta",
+    "Location": "Locatie",
+    "Name": "Nume conferinta",
+    "StartDate": "Data inceput",
+    "EndDate": "Data sfarsit",
+    "Type": "Tipul conferintei",
+    "Category": "Categorie"
+  },
+  "Speaker": {
+    "Name": "Nume",
+    "Nationality": "Nationalitate",
+    "Rating": "Rating",
+    "MainSpeaker": "Orator principal"
+  },
+  "Location": {
+    "Name": "Nume",
+    "Address": "Adresa",
+    "Country": "Tara",
+    "County": "Judet",
+    "City": "Oras",
+    "Latitude": "Latitudine",
+    "Longitude": "Longitudine"
+  },
+  "MyConferences": {
+    "Edit": "Modifica",
+    "Delete": "Sterge",
+    "AddButton": "Adauga conferinta"
+  },
+  "Buttons": {
+    "ResetFilters": "Reseteaza filtre",
+    "ApplyFilters": "Aplica filtre",
+    "Save": "Salveaza"
+  },
+  "UserMenu": {
     "User": "Profil"
   },
   "Tooltips": {
     "Logout": "Iesire",
     "HidePassword": "Ascunde parola",
     "ShowPassword": "Arata parola"
+  },
+  "LandingPage": {
+    "Title": "Bun venit!",
+    "Subtitle": "Te rog introdu email-ul personal:",
+    "BadEmail": "Acesta nu este un email valid!"
   },
   "Dialog": {
     "Yes": "Da",
