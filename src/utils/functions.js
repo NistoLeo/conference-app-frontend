@@ -2,6 +2,8 @@ import moment from 'moment'
 import { curry, without, intersection, isEmpty, not } from 'ramda'
 import { validEmailRegEx } from './constants'
 
+export const extractPager = ({ page, pageSize }) => ({ page, pageSize })
+
 export const extractExactAge = (birthday, referenceDate) => {
   var differenceInMilisecond = Date.parse(referenceDate) || Date.now() - Date.parse(birthday)
 

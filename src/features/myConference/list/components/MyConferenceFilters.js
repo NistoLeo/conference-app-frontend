@@ -28,7 +28,7 @@ const MyConferenceFilters = props => {
       iconColor='theme'
       content={
         <Fragment>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} onKeyDown={handleKeyPressed}>
             <Grid item xs={12} lg={3}>
               <DateTime label={t('Conferences.Filters.StartDate')} clearable value={startDate} onChange={setStartDate} />
             </Grid>
@@ -39,7 +39,7 @@ const MyConferenceFilters = props => {
               <Button size={'md'} color={'primary'} right={true} onClick={handleResetButton}>
                 {t('Buttons.ResetFilters')}
               </Button>
-              <Button size={'md'} color={'primary'} right={true} onClick={(handleApplyButton, handleKeyPressed)}>
+              <Button size={'md'} color={'primary'} right={true} onClick={handleApplyButton}>
                 {t('Buttons.ApplyFilters')}
               </Button>
             </Grid>

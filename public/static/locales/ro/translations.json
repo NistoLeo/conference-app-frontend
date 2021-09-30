@@ -14,7 +14,10 @@
   "Conferences": {
     "Filters": {
       "StartDate": "Data start",
-      "EndDate": "Data sfarsit"
+      "EndDate": "Data sfarsit",
+      "Info": "Detalii conferinta",
+      "Location": "Locatie conferinta",
+      "Speakers": "Prezentatori conferinta"
     },
 
     "Speakers": "Prezentator:",

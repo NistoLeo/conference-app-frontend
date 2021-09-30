@@ -1,19 +1,21 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
+import { Info, LocationOn, Face } from '@material-ui/icons'
 import IconCard from '@bit/totalsoft_oss.react-mui.icon-card'
-import { Face, Info, LocationOn } from '@material-ui/icons'
 import CardTitle from '@bit/totalsoft_oss.react-mui.card-title'
 import AddButton from '@bit/totalsoft_oss.react-mui.add-button'
 import MyConferenceInfo from './MyConferenceInfo'
-import MyConferenceSpeakers from './MyConferenceSpeakers'
 import MyConferenceLocation from './MyConferenceLocation'
+import MyConferenceSpeakers from './MyConferenceSpeakers'
 
 const MyConference = props => {
   const { types, categories, countries, counties, cities, conference, dispatch } = props
-  //const {conference, dispatch } = props
-
   const { t } = useTranslation()
+  const { location } = conference
+  const { speakers } = conference
+  const handleAddButton = useCallback(() => dispatch({ type: 'addSpeaker' }), [dispatch])
+
   return (
     <>
       <IconCard
@@ -24,16 +26,22 @@ const MyConference = props => {
       <IconCard
         icon={LocationOn}
         title={t('Conferences.Location')}
-        content={<MyConferenceLocation countries={countries} counties={counties} cities={cities} />}
+        content={<MyConferenceLocation countries={countries} counties={counties} cities={cities} location={location} dispatch={dispatch} />}
       />
       <IconCard
-        content={<MyConferenceSpeakers />}
         icon={Face}
-        title={<CardTitle title={t('Conferences.Speakers')} actions={[<AddButton key='addSpeaker' title={t('Buttons.AddSpeaker')} />]} />}
+        title={
+          <CardTitle
+            title={t('Conferences.Speakers')}
+            actions={[<AddButton key='addButton' title={t('Buttons.AddSpeaker')} onClick={handleAddButton} />]}
+          />
+        }
+        content={<MyConferenceSpeakers speakers={speakers} dispatch={dispatch} />}
       />
     </>
   )
 }
+
 MyConference.propTypes = {
   types: PropTypes.array,
   categories: PropTypes.array,

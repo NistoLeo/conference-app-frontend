@@ -44,12 +44,16 @@
   "Buttons": {
     "ResetFilters": "Reset Filters",
     "ApplyFilters": "Apply Filters",
-    "Save": "Save"
+    "Save": "Save",
+    "AddSpeaker": "Adauga Prezentator"
   },
   "Conferences": {
     "Filters": {
       "StartDate": "Start date",
-      "EndDate": "End date"
+      "EndDate": "End date",
+      "Info": "Conference Info",
+      "Location": "Conference Location",
+      "Speakers": "Conference Speakers"
     },
     "Speakers": "Speaker:",
     "Attend": "Attend",

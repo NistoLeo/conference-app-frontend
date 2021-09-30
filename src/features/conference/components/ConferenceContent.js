@@ -11,9 +11,9 @@ const ConferenceContent = props => {
 
   const { t } = useTranslation()
 
-  const showJoin = status.id === attendeeStatus.Attended
-  const showWithdraw = status.id === attendeeStatus.Attended || status.id === attendeeStatus.Joined
-  const showAttend = status.id === attendeeStatus.Withdrawn
+  const showJoin = status?.id === attendeeStatus.Attended
+  const showWithdraw = status?.id === attendeeStatus.Attended || status?.id === attendeeStatus.Joined
+  const showAttend = status?.id === attendeeStatus.Withdrawn
   const noStatusSet = t('Conferences.StatusNotSet')
 
   const startDateFormatted = t('DATE_FORMAT', { date: { value: startDate, format: 'DD-MM-YYYY HH:mm' } })
