@@ -44,8 +44,9 @@
   "Buttons": {
     "ResetFilters": "Reset Filters",
     "ApplyFilters": "Apply Filters",
-    "Save": "Save",
-    "AddSpeaker": "Adauga Prezentator"
+    "Save": "Save Conference",
+    "AddSpeaker": "Add Speaker",
+    "AddConference": "Add Conference"
   },
   "Conferences": {
     "Filters": {

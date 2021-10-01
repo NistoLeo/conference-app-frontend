@@ -5,27 +5,29 @@ import { useTranslation } from 'react-i18next'
 import CustomTextField from '@bit/totalsoft_oss.react-mui.custom-text-field'
 import DateTime from '@bit/totalsoft_oss.react-mui.date-time'
 import Autocomplete from '@bit/totalsoft_oss.react-mui.autocomplete'
-import handleDispatch from 'utils/functions'
 
 import { onTextBoxChange } from 'utils/propertyChangeAdapters'
 const MyConferenceInfo = props => {
   const { types, categories, conference, dispatch } = props
+
   const { t } = useTranslation()
   const { name, startDate, endDate, type, category } = conference
+
+  const handleDispatch = actionType => value => dispatch({ type: actionType, payload: value })
 
   return (
     <Grid container spacing={3}>
       <Grid item container lg={9} spacing={3}>
         <Grid item xs={12} sm={6} lg={4}>
-          <CustomTextField label={t('Conferences.Name')} fullWidth />
+          <CustomTextField label={t('Conferences.Name')} fullWidth value={name} onChange={onTextBoxChange(handleDispatch('name'))} />
         </Grid>
       </Grid>
       <Grid item container lg={12} spacing={3}>
         <Grid item xs={12} sm={6} lg={3}>
-          <DateTime label={t('Conferences.StartDate')} showTime={true} />
+          <DateTime label={t('Conferences.StartDate')} showTime={true} value={startDate} onChange={handleDispatch('startDate')} />
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
-          <DateTime label={t('Conferences.EndDate')} showTime={true} />
+          <DateTime label={t('Conferences.EndDate')} showTime={true} value={endDate} onChange={handleDispatch('endDate')} />
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <Autocomplete
@@ -34,8 +36,9 @@ const MyConferenceInfo = props => {
             fullWidth
             isClearable
             isSearchable
-            creatable
             options={types}
+            value={type}
+            onChange={handleDispatch('type')}
           />
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
@@ -45,8 +48,9 @@ const MyConferenceInfo = props => {
             fullWidth
             isClearable
             isSearchable
-            creatable
             options={categories}
+            value={category}
+            onChange={handleDispatch('category')}
           />
         </Grid>
       </Grid>

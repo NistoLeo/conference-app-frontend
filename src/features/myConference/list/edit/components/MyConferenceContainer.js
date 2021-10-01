@@ -8,9 +8,10 @@ import LoadingFakeText from '@bit/totalsoft_oss.react-mui.fake-text/dist/Loading
 import { categories, cities, counties, countries, types } from 'utils/mocks/autoComplete'
 import MyConference from './MyConference'
 import { initialConference, reducer } from '../conferenceState'
-import { conference as mockConference } from 'utils/mocks/myConference'
 import { useRouteMatch } from 'react-router'
 import MyConferenceHeader from './MyConferenceHeader'
+import { useQueryWithErrorHandling } from 'hooks/errorHandling'
+import { CONFERENCE_QUERY } from '../gql/queries/conferenceQuery'
 
 const MyConferenceContainer = () => {
   const [, setHeader] = useHeader()
@@ -21,11 +22,11 @@ const MyConferenceContainer = () => {
   const conferenceId = match.params.id
   const isNew = conferenceId === 'new'
 
-  useEffect(() => {
-    if (!isNew) {
-      dispatch({ type: 'resetConference', payload: mockConference })
-    }
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  const { loading: loadingConference } = useQueryWithErrorHandling(CONFERENCE_QUERY, {
+    variables: { id: conferenceId },
+    skip: isNew,
+    onCompleted: result => dispatch({ type: 'resetConference', payload: result.conference })
+  })
 
   useEffect(() => () => setHeader(null), []) // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -42,7 +43,7 @@ const MyConferenceContainer = () => {
       cityList: cities
     }
   }
-  if (loading) return <LoadingFakeText line={10} />
+  if (loading || loadingConference) return <LoadingFakeText line={10} />
   return (
     <MyConference
       conference={conference}

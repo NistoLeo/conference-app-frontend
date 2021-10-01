@@ -56,7 +56,9 @@
   "Buttons": {
     "ResetFilters": "Reseteaza filtre",
     "ApplyFilters": "Aplica filtre",
-    "Save": "Salveaza"
+    "Save": "Salveaza Conferinta",
+    "AddSpeaker": "Adauga Prezentator",
+    "AddConference": "Adauga Conferinta"
   },
   "UserMenu": {
     "User": "Profil"

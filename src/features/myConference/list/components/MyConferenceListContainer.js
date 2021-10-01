@@ -35,7 +35,7 @@ function MyConferenceListContainer() {
   })
 
   const handleAddClick = useCallback(() => {
-    history.push('myConference/new')
+    history.push('myConferences/new')
   }, [history])
 
   useEffect(() => {
