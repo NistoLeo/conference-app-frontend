@@ -31,13 +31,16 @@
     "StartDate": "Data inceput",
     "EndDate": "Data sfarsit",
     "Type": "Tipul conferintei",
-    "Category": "Categorie"
+    "Category": "Categorie",
+    "SuccessfullyAttended": "Participare efectuata cu success",
+    "Congratulations": "Felicitari! Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa.",
+    "QRCodeMessage": "Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa. Foloseste urmatorul cod pentru a accesa conferinta: {{code}}"
   },
   "Speaker": {
     "Name": "Nume",
     "Nationality": "Nationalitate",
     "Rating": "Rating",
-    "MainSpeaker": "Orator principal"
+    "MainSpeaker": "Prezentator principal"
   },
   "Location": {
     "Name": "Nume",
@@ -58,7 +61,8 @@
     "ApplyFilters": "Aplica filtre",
     "Save": "Salveaza Conferinta",
     "AddSpeaker": "Adauga Prezentator",
-    "AddConference": "Adauga Conferinta"
+    "AddConference": "Adauga Conferinta",
+    "DeleteSpeaker": "Sterge Prezentator"
   },
   "UserMenu": {
     "User": "Profil"

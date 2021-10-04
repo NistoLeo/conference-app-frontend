@@ -60,7 +60,7 @@ const MyConferenceSpeakerData = props => {
       </Td>
 
       <Td className={classes.tableContent}>
-        <DeleteButton title={t('General.DeleteSpeaker')} size='small' onClick={handleDelete} />
+        <DeleteButton title={t('Buttons.DeleteSpeaker')} size='small' onClick={handleDelete} />
       </Td>
     </Tr>
   )

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { Fragment, useCallback, useEffect, useState } from 'react'
 import SearchIcon from '@material-ui/icons/Search'
 import { Grid } from '@material-ui/core'
 import DateTime from '@bit/totalsoft_oss.react-mui.date-time'
@@ -28,22 +28,26 @@ function ConferenceFilters(props) {
         icon={SearchIcon}
         iconColor='theme'
         content={
-          <Grid container spacing={2} onKeyDown={handleKeyPressed}>
-            <Grid item xs={12} lg={3}>
-              <DateTime label={t('Conferences.Filters.StartDate')} clearable value={startDate} onChange={setStartDate} />
+          <Fragment>
+            <Grid container spacing={2} onKeyDown={handleKeyPressed}>
+              <Grid item xs={12} lg={3}>
+                <DateTime label={t('Conferences.Filters.StartDate')} clearable value={startDate} onChange={setStartDate} />
+              </Grid>
+              <Grid item xs={12} lg={3}>
+                <DateTime label={t('Conferences.Filters.EndDate')} clearable value={endDate} onChange={setEndDate} />
+              </Grid>
+              <Grid item xs={12} lg={5} spacing={5}>
+                <Button size={'md'} color={'primary'} right={true} onClick={handleResetClick}>
+                  {t('Buttons.ResetFilters')}
+                </Button>
+                <Button size={'md'} color={'primary'} right={true} onClick={handleApplyClick}>
+                  {t('Buttons.ApplyFilters')}
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={12} lg={3}>
-              <DateTime label={t('Conferences.Filters.EndDate')} clearable value={endDate} onChange={setEndDate} />
-            </Grid>
-          </Grid>
+          </Fragment>
         }
       />
-      <Button size={'sm'} color={'primary'} right={true} onClick={handleResetClick}>
-        {t('Buttons.ResetFilters')}
-      </Button>
-      <Button size={'sm'} color={'primary'} right={true} onClick={handleApplyClick}>
-        {t('Buttons.ApplyFilters')}
-      </Button>
     </>
   )
 }

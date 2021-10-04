@@ -46,7 +46,8 @@
     "ApplyFilters": "Apply Filters",
     "Save": "Save Conference",
     "AddSpeaker": "Add Speaker",
-    "AddConference": "Add Conference"
+    "AddConference": "Add Conference",
+    "DeleteSpeaker": "Delete Speaker"
   },
   "Conferences": {
     "Filters": {
@@ -67,7 +68,10 @@
     "StartDate": "Start date",
     "EndDate": "End date",
     "Type": "Conference type",
-    "Category": "Category"
+    "Category": "Category",
+    "SuccessfullyAttended": "Successfully Attended",
+    "Congratulations": "Congratulations! You successfully attended to the conference! You will be notified to join 5 minutes before it starts.",
+    "QRCodeMessage": "You successfully attended to the conference! You will be notified to join 5 minutes before it starts. Use the following code to access the conference: {{code}}"
   },
   "Speaker": {
     "Name": "Name",

@@ -23,30 +23,32 @@ const MyConferenceFilters = props => {
   const { t } = useTranslation()
 
   return (
-    <IconCard
-      icon={SearchIcon}
-      iconColor='theme'
-      content={
-        <Fragment>
-          <Grid container spacing={2} onKeyDown={handleKeyPressed}>
-            <Grid item xs={12} lg={3}>
-              <DateTime label={t('Conferences.Filters.StartDate')} clearable value={startDate} onChange={setStartDate} />
+    <>
+      <IconCard
+        icon={SearchIcon}
+        iconColor='theme'
+        content={
+          <Fragment>
+            <Grid container spacing={2} onKeyDown={handleKeyPressed}>
+              <Grid item xs={12} lg={3}>
+                <DateTime label={t('Conferences.Filters.StartDate')} clearable value={startDate} onChange={setStartDate} />
+              </Grid>
+              <Grid item xs={12} lg={3}>
+                <DateTime label={t('Conferences.Filters.EndDate')} clearable value={endDate} onChange={setEndDate} />
+              </Grid>
+              <Grid item xs={12} lg={5} spacing={5}>
+                <Button size={'md'} color={'primary'} right={true} onClick={handleResetButton}>
+                  {t('Buttons.ResetFilters')}
+                </Button>
+                <Button size={'md'} color={'primary'} right={true} onClick={handleApplyButton}>
+                  {t('Buttons.ApplyFilters')}
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={12} lg={3}>
-              <DateTime label={t('Conferences.Filters.EndDate')} clearable value={endDate} onChange={setEndDate} />
-            </Grid>
-            <Grid item xs={12} lg={5} spacing={5}>
-              <Button size={'md'} color={'primary'} right={true} onClick={handleResetButton}>
-                {t('Buttons.ResetFilters')}
-              </Button>
-              <Button size={'md'} color={'primary'} right={true} onClick={handleApplyButton}>
-                {t('Buttons.ApplyFilters')}
-              </Button>
-            </Grid>
-          </Grid>
-        </Fragment>
-      }
-    />
+          </Fragment>
+        }
+      />
+    </>
   )
 }
 MyConferenceFilters.propTypes = {

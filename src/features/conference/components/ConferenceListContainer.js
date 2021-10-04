@@ -8,9 +8,23 @@ import { CONFERENCE_LIST_QUERY } from '../gql/queries/ConferenceListQuery'
 import { useEmail } from 'hooks/useEmail'
 import { useFooter } from 'providers/AreasProvider'
 import Pagination from '@bit/totalsoft_oss.react-mui.pagination'
+import { useMutation } from '@apollo/client'
+import ATTEND_CONFERENCE from '../gql/mutations/AttendConference'
+import { useError } from 'hooks/errorHandling'
+import DialogDisplay from '@bit/totalsoft_oss.react-mui.dialog-display'
+import ConferenceCodeModal from './ConferenceCodeModal'
+//import { AddTypenameToAbstract } from '@graphql-tools/delegate'
+import { useTranslation } from 'react-i18next'
+import { useToast } from '@bit/totalsoft_oss.react-mui.kit.core'
+import { emptyString } from 'utils/constants'
 //import state from 'constants/attendeeStatus'
 
 function ConferenceListContainer() {
+  const [code, setCode] = useState()
+  const [open, setOpen] = useState(false)
+  const { t } = useTranslation()
+  const addToast = useToast()
+  const showError = useError()
   const [filters, setFilters] = useState(generateDefaultFilters())
   const [pager, setPager] = useState({ totalCount: 25, page: 0, pageSize: 3 })
 
@@ -34,6 +48,25 @@ function ConferenceListContainer() {
   const handleRowsPerPageChange = useCallback(pageSize => {
     setPager(state => ({ ...state, pageSize: parseInt(pageSize) }))
   }, [])
+  const [attend] = useMutation(ATTEND_CONFERENCE, {
+    onError: showError,
+    onCompleted: result => {
+      result?.attend && setCode(result?.attend)
+      setOpen(true)
+      addToast(t('Conferences.SuccessfullyAttended'), 'success')
+    }
+  })
+
+  const handleAttend = useCallback(
+    conferenceId => () => {
+      const input = {
+        attendeeEmail: email,
+        conferenceId
+      }
+      attend({ variables: { input } })
+    },
+    [attend, email]
+  )
 
   const handlePageChange = useCallback(page => {
     setPager(state => ({ ...state, page }))
@@ -56,7 +89,11 @@ function ConferenceListContainer() {
   const handleApplyFilters = useCallback(value => {
     setFilters(value)
   }, [])
-
+  const handleClose = useCallback(() => {
+    setOpen(false)
+    setCode(emptyString)
+    refetch()
+  }, [refetch])
   if (loading || !data) {
     return <LoadingFakeText lines={10} />
   }
@@ -64,7 +101,14 @@ function ConferenceListContainer() {
   return (
     <>
       <ConferenceFilters filters={filters} onApplyFilters={handleApplyFilters} />
-      <ConferenceList conferences={data?.conferenceList?.values} />
+      <ConferenceList conferences={data?.conferenceList?.values} onAttend={handleAttend} />
+      <DialogDisplay
+        id='showQRCode'
+        title={t('Conferences.Congratulations')}
+        open={open}
+        onClose={handleClose}
+        content={<ConferenceCodeModal code={code} />}
+      />
     </>
   )
 }
