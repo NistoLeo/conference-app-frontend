@@ -40,7 +40,10 @@ export const reducer = (state, action) => {
       const minId = Math.min(...state.speakers.map(s => s.id), 0)
       return {
         ...state,
-        speakers: [...state.speakers, { id: minId - 1, name: emptyString, nationality: emptyString, rating: emptyString }]
+        speakers: [
+          ...state.speakers,
+          { id: minId - 1, name: emptyString, nationality: emptyString, rating: emptyString, isMainSpeaker: false }
+        ]
       }
     }
     case 'deleteSpeaker': {

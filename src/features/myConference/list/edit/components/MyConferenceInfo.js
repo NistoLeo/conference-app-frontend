@@ -35,7 +35,6 @@ const MyConferenceInfo = props => {
             createdLabel='Conferences.Type'
             fullWidth
             isClearable
-            isSearchable
             options={types}
             value={type}
             onChange={handleDispatch('type')}
@@ -47,7 +46,6 @@ const MyConferenceInfo = props => {
             createdLabel='Conferences.Category'
             fullWidth
             isClearable
-            isSearchable
             options={categories}
             value={category}
             onChange={handleDispatch('category')}

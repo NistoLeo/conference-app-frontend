@@ -43,7 +43,6 @@ const MyConferenceLocation = props => {
             createdLabel='Location.Country'
             fullWidth
             isClearable
-            isSearchable
             options={countries}
             value={country ?? emptyString}
             onChange={handleDispatch('country')}
@@ -55,7 +54,6 @@ const MyConferenceLocation = props => {
             createdLabel='Location.County'
             fullWidth
             isClearable
-            isSearchable
             options={counties}
             value={county ?? emptyString}
             onChange={handleDispatch('county')}
@@ -67,7 +65,6 @@ const MyConferenceLocation = props => {
             createdLabel='Location.City'
             fullWidth
             isClearable
-            isSearchable
             options={cities}
             value={city ?? emptyString}
             onChange={handleDispatch('city')}
@@ -100,8 +97,8 @@ MyConferenceLocation.propTypes = {
   countries: PropTypes.array.isRequired,
   counties: PropTypes.array.isRequired,
   cities: PropTypes.array.isRequired,
-  dispatch: PropTypes.object.isRequired,
-  location: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export default MyConferenceLocation

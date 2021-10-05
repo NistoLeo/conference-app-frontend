@@ -31,8 +31,9 @@
     "EndDate": "Data sfarsit",
     "Type": "Tipul conferintei",
     "Category": "Categorie",
-    "SuccessfullyAttended": "Participare efectuata cu success",
-    "SuccessfullyWithdrawn": "Retras cu succes",
+    "SuccessfullyAttended": "Participarea a fost efectuata cu success!",
+    "SuccessfullyWithdrawn": "Retragerea a fost efectuata cu succes!",
+    "SuccessfullySaved": "Conferinta a fost salvata cu success!",
     "Congratulations": "Felicitari! Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa.",
     "QRCodeMessage": "Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa. Foloseste urmatorul cod pentru a accesa conferinta: {{code}}",
     "SuggestedConferences": "Conferinte Sugerate:"

@@ -3,7 +3,7 @@
 
 import { emailKey } from './cacheKeyFunctions'
 
-const emailValue = { email: 'admin23@totalsoft.ro' }
+const emailValue = { email: 'admin@totalsoft.ro' }
 
 export const defaults = {
   [emailKey]: emailValue

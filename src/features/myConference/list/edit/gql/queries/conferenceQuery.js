@@ -28,6 +28,29 @@ export const CONFERENCE_QUERY = gql`
         ...speaker
       }
     }
+    typeList {
+      id
+      name
+    }
+    categoryList {
+      id
+      name
+    }
+    countryList {
+      id
+      name
+      code
+    }
+    countyList {
+      id
+      name
+      code
+    }
+    cityList {
+      id
+      name
+      code
+    }
   }
   ${ConferenceFragments.conference}
   ${ConferenceFragments.location}

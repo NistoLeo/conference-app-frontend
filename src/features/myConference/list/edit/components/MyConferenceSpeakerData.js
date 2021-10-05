@@ -14,7 +14,7 @@ import DeleteButton from '@bit/totalsoft_oss.react-mui.delete-button'
 
 import { useTranslation } from 'react-i18next'
 
-import { onTextBoxChange } from 'utils/propertyChangeAdapters'
+import { onCheckBoxChange, onTextBoxChange } from 'utils/propertyChangeAdapters'
 
 const useStyles = makeStyles(tableStyles)
 
@@ -54,8 +54,8 @@ const MyConferenceSpeakerData = props => {
       <Td className={classes.tableContent}>
         <Checkbox
           color='secondary'
-          checked={isMainSpeaker}
-          onChange={onTextBoxChange(handleGeneralDispatch('isMainSpeaker', 'isMainSpeaker'))}
+          checked={!!isMainSpeaker}
+          onChange={onCheckBoxChange(handleGeneralDispatch('isMainSpeaker', 'isMainSpeaker'))}
         />
       </Td>
 
@@ -68,7 +68,6 @@ const MyConferenceSpeakerData = props => {
 
 MyConferenceSpeakerData.propTypes = {
   speaker: PropTypes.object,
-
   dispatch: PropTypes.func
 }
 
