@@ -6,7 +6,7 @@ import { Grid, Typography } from '@material-ui/core'
 import Button from '@bit/totalsoft_oss.react-mui.button'
 
 const ConferenceContent = props => {
-  const { conference, onAttend } = props
+  const { conference, onAttend, onWithdraw } = props
   const { status, startDate, endDate, type, category } = conference
 
   const { t } = useTranslation()
@@ -42,7 +42,7 @@ const ConferenceContent = props => {
           </Grid>
           <Grid item>
             {showWithdraw && (
-              <Button right color={'danger'} size={'sm'}>
+              <Button onClick={onWithdraw(conference?.id)} right color={'danger'} size={'sm'}>
                 {t('Conferences.Withdraw')}
               </Button>
             )}
@@ -62,7 +62,8 @@ const ConferenceContent = props => {
 
 ConferenceContent.propTypes = {
   conference: PropTypes.object.isRequired,
-  onAttend: PropTypes.func.isRequired
+  onAttend: PropTypes.func.isRequired,
+  onWithdraw: PropTypes.func.isRequired
 }
 
 export default ConferenceContent

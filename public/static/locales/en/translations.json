@@ -70,8 +70,10 @@
     "Type": "Conference type",
     "Category": "Category",
     "SuccessfullyAttended": "Successfully Attended",
+    "SuccessfullyWithdrawn": "Successfully Withdrawn",
     "Congratulations": "Congratulations! You successfully attended to the conference! You will be notified to join 5 minutes before it starts.",
-    "QRCodeMessage": "You successfully attended to the conference! You will be notified to join 5 minutes before it starts. Use the following code to access the conference: {{code}}"
+    "QRCodeMessage": "You successfully attended to the conference! You will be notified to join 5 minutes before it starts. Use the following code to access the conference: {{code}}",
+    "SuggestedConferences": "Suggested Conferences:"
   },
   "Speaker": {
     "Name": "Name",

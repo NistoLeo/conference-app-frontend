@@ -19,7 +19,6 @@
       "Location": "Locatie conferinta",
       "Speakers": "Prezentatori conferinta"
     },
-
     "Speakers": "Prezentator:",
     "Attend": "Participa",
     "Join": "Intra",
@@ -33,8 +32,10 @@
     "Type": "Tipul conferintei",
     "Category": "Categorie",
     "SuccessfullyAttended": "Participare efectuata cu success",
+    "SuccessfullyWithdrawn": "Retras cu succes",
     "Congratulations": "Felicitari! Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa.",
-    "QRCodeMessage": "Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa. Foloseste urmatorul cod pentru a accesa conferinta: {{code}}"
+    "QRCodeMessage": "Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa. Foloseste urmatorul cod pentru a accesa conferinta: {{code}}",
+    "SuggestedConferences": "Conferinte Sugerate:"
   },
   "Speaker": {
     "Name": "Nume",
